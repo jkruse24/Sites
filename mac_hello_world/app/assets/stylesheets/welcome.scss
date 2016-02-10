@@ -1,0 +1,34 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+	background:black;
+    color: red;
+
+}
+
+.flex-center {
+    display: -webkit-flex;
+    display: flex;
+    width: 75%;
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: pink;
+    color: black;
+}
+
+.flex-item {
+    background-color: cornflowerblue;
+    width: 75%;
+    display: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table td tr {
+    border: 1px solid black;
+}
