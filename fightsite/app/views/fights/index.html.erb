@@ -1,0 +1,19 @@
+<h1>Listing Fights</h1>
+
+<br>
+	<%= link_to 'New fight', new_fight_path %>
+<br>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+ 
+  <% @fights.each do |fight| %>
+    <tr>
+      <td><%= fight.title %></td>
+      <td><%= fight.description %></td>
+    </tr>
+  <% end %>
+</table>
