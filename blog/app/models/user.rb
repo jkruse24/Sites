@@ -7,4 +7,7 @@ class User < ActiveRecord::Base
 					uniqueness: {case_sensitive: false}
 	has_secure_password
 	validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-end #probably add a regex to make password more complex
+					#probably add a regex to make password more complex
+
+	
+end
