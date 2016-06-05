@@ -5,11 +5,7 @@ snake:
   email: snakekruse2@gmail.com
   password_digest: <%= User.digest('password') %>
 
-
- # one:
- #   name: MyString
- #   email: MyString
- #
- # two:
- #   name: MyString
- #   email: MyString
+jon:
+  name: Jon Snow
+  email: jon.snow@thewall.com
+  password_digest: <%= User.digest('password') %>
