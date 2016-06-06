@@ -43,4 +43,30 @@ class UsersControllerTest < ActionController::TestCase
     assert_redirected_to root_url
   end
 
+  test "should redirect destroy when not logged in" do
+    assert_no_difference 'User.count' do
+      delete :destroy, id: @user
+    end
+    assert_redirected_to login_url
+  end
+
+  test "should redirect destroy when logged in as a non-admin" do
+    log_in_as(@other_user)
+    assert_no_difference 'User.count' do
+      delete :destroy, id: @user
+    end
+    assert_redirected_to root_url
+  end
+
+  # This is a test that was and exercise in 9.6 (of the rails book)
+  #https://www.railstutorial.org/book/updating_and_deleting_users
+  #test "should not allow the admin attribute to be edited via the web" do
+  #  log_in_as(@other_user)
+  #  assert_not @other_user.admin?
+  #  patch :update, id: @other_user, user: { password:              FILL_IN,
+  #                                          password_confirmation: FILL_IN,
+  #                                          admin: FILL_IN }
+  #  assert_not @other_user.FILL_IN.admin?
+  #end
+
 end
