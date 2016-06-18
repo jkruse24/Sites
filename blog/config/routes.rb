@@ -11,14 +11,14 @@ Rails.application.routes.draw do
    get    'login'   => 'sessions#new'
    post   'login'   => 'sessions#create'
    delete 'logout'  => 'sessions#destroy'
-   
+
+   resources :users
+   resources :account_activations, only: [:edit]
+
    #This creates comments as a nested resource within articles.
 	resources :articles do
 		resources :comments
 	end
-
-	resources :users
-
 
   #Examples!
 
